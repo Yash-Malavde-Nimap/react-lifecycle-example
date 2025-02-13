@@ -3,17 +3,15 @@ import { useState, useEffect } from "react";
 const MyComponent = () => {
   const [count, setCount] = useState(0);
 
-  // componentDidMount and componentDidUpdate combined with useEffect
   useEffect(() => {
     console.log(
       "2.) componentDidMount / componentDidUpdate: Component rendered/updated"
     );
 
-    // componentWillUnmount
     return () => {
       console.log("3.) componentWillUnmount: Cleanup before unmount");
     };
-  }, [count]); // dependency array ensures this effect runs when `count` changes
+  }, [count]);
 
   console.log("1.) Render: Component is rendering");
 
